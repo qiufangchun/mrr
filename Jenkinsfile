@@ -9,7 +9,7 @@ pipeline {
     stage('build') {
       steps {
         sh '''cd ./mrr
-mvn clearn package'''
+mvn clean package'''
       }
     }
   }
