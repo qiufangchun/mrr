@@ -11,6 +11,8 @@ pipeline {
         sh '''cd ./mrr
 mvn clean package
 docker build -t fangchun/tomcat:7.1 . 
+docker ps -f name=fangchun/tomcat:7.1 -q | xargs --no-run-if-empty docker stop
+docker ps -a -f name=fangchun/tomcat:7.1 -q | xargs -r docker rm
 docker run -d -p 88:8080 fangchun/tomcat:7.1
 '''
         //sh 'docker build -t fangchun/tomcat:7.1 -f ./mrr/Dockerfile'
