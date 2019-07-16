@@ -10,6 +10,8 @@ pipeline {
       steps {
         sh '''cd ./mrr
 mvn clean package'''
+        
+        docker.build("my-image:${env.BUILD_ID}", "./mrr/")
       }
     }
   }
