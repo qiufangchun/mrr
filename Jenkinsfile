@@ -11,7 +11,7 @@ pipeline {
         sh '''cd ./mrr
 mvn clean package
 docker build -t fangchun/tomcat:7.1 . 
-docker run -p 88:8080 fangchun/tomcat:7.1
+docker run -d -p 88:8080 fangchun/tomcat:7.1
 '''
         //sh 'docker build -t fangchun/tomcat:7.1 -f ./mrr/Dockerfile'
         //docker.build("my-image:${env.BUILD_ID}", "./mrr/")
