@@ -24,7 +24,7 @@ RUN yum -y install wget \
 && tar -zxvf jdk1.7.tar.gz --strip-components=1 \
 && rm jdk1.7.tar.gz 
 
-COPY ./mrr/src/main/webapp /opt/apache-tomcat-7.0.47/webapps/	
+COPY ./mrr/src/main/webapp/index.jsp /opt/apache-tomcat-7.0.47/webapps/ROOT/
 
 EXPOSE 8080
 
